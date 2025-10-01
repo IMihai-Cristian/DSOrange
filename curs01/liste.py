@@ -13,7 +13,7 @@ import math
 # print(list_1 is list_2)
 
 """ pot sa contina o varietate de elemente """
-list_var = [1, 2.4, 'ana', True, None, ['1', 2, False], len, int, math]
+# list_var = [1, 2.4, 'ana', True, None, ['1', 2, False], len, int, math]
 
 """ concatenare """
 # print([1, 2] + [3, 4])
@@ -108,3 +108,11 @@ list_var = [1, 2.4, 'ana', True, None, ['1', 2, False], len, int, math]
 # list_13 = ['ana', 'are', 'mere', 'si', 'pere']
 # list_13.sort(reverse=True)
 # print(list_13)
+
+""" declarare multipla """
+# list_names = ['Mihai', 'Andrei', 'Oana']
+# [name_1, name_2, name_3] = list_names
+# print(name_2)
+# list_names = ['Mihai', 'Andrei', 'Oana', 'Ion', 'Vasile']
+# [name_1, *name_2, name_3] = list_names
+# print(name_2)
