@@ -114,7 +114,7 @@
 #     print(var)
 
 # ex.2
-ex_dict = {'key_1': 1, 'key_2': 'abc', 'key_3': 10}
+# ex_dict = {'key_1': 1, 'key_2': 'abc', 'key_3': 10}
 # for x in ex_dict:
 #     print(x)
 
@@ -135,8 +135,8 @@ ex_dict = {'key_1': 1, 'key_2': 'abc', 'key_3': 10}
 
 
 """ FOR cu enumerate """
-list_result = []
-list_ex = ['A', 'B', 'C']
+# list_result = []
+# list_ex = ['A', 'B', 'C']
 # for gigel, elem in enumerate(list_ex, start=888):
 #     print(gigel)
 #     dict_val = {}
@@ -154,7 +154,119 @@ list_ex = ['A', 'B', 'C']
 
 """ FOR cu range"""
 
-for item in range(-100, 101, 10):
-    list_result.append(item)
-print(list_result)
+# for item in range(-100, 101, 10):
+#     list_result.append(item)
+# print(list_result)
 
+
+""" BREAK si CONTINUE """
+
+# for animal in ['urs', 'maimuta', 'melc', 'vulpe', 'magar']:
+#     if animal.startswith('m'):
+#         continue
+#     print(animal)
+
+# for animal in ['urs', 'maimuta', 'melc', 'vulpe', 'magar']:
+#     if animal.startswith('m'):
+#         break
+#     print(animal)
+
+# for animal in ['urs', 'maimuta', 'melc', 'vulpe', 'magar']:
+#     if animal.startswith('m'):
+#         pass
+#     print(animal)
+
+
+""" FOR poate avea si ELSE """
+
+# for animal in ['urs', 'maimuta', 'melc', 'vulpe', 'magar']:
+#     print(animal)
+#     break
+# else:
+#     print('OK')
+
+
+
+
+
+""" WHILE """
+
+# nr = 0
+# while nr > 0:
+#     nr -= 1
+#     print(nr)
+
+# animal = ['urs', 'maimuta', 'melc', 'vulpe', 'magar']
+# while animal:
+#     print(animal.pop(-1))
+#     print(animal)
+
+# nr_ex = 1
+# while nr_ex:
+#     print('OK')
+#     nr_ex -= 1
+
+
+""" BREAK si CONTINUE """
+
+# nr = 5
+# while nr > 0:
+#     nr -= 1
+#     if nr == 1:
+#         continue
+#     print(nr)
+# print('FINAL')
+
+""" ELSE """
+
+
+# nr = 5
+# while nr > 0:
+#     nr -= 1
+#     print(nr)
+# else:
+#     print('OK')
+
+""" DECLARATIILE MATCH / CASE """
+
+
+# car = "Dacia"
+#
+# match car:
+#     case 'Audi' | 'BMW':
+#         print('German Cars')
+#     case 'Dacia':
+#         print('Romanian Cars')
+#     case 'Fiat':
+#         print('Italian Cars')
+#     case _:
+#         print('Other Cars')
+
+"""Creati un program in care utilizatorul sa introduca un numar. Calculati daca numarul
+este pozitiv, zero sau negativ. In cazul in care este pozitiv validati daca este mai mic
+decat 10 si afisati un mesaj de confirmare..Daca numarul este zero afisati “Numarul
+este 0”, iar daca numarul este negativ atunci transformati numarul in numar pozitiv si
+afisati numarul pozitiv."""
+
+# var = int(input('Introduceti nr.:'))
+# if var > 0:
+#     print('Nr este pozitiv')
+#     if var < 10:
+#         print('Nr este mai mic decat 10')
+#     else:
+#         print('Nr este mai mare sau egal 10')
+# elif var == 0:
+#     print('Nr este 0')
+# else:
+#     print(f'Nr este negativ. Valoarea lui este {abs(var)}')
+
+
+var = int(input('Introduceti nr.:'))
+if 0 < var < 10:
+    print('Nr este pozitiv. Nr este mai mic decat 10')
+elif var >= 10:
+        print('Nr este mai mare sau egal 10')
+elif var == 0:
+    print('Nr este 0')
+else:
+    print(f'Nr este negativ. Valoarea lui este {abs(var)}')
