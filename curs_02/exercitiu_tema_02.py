@@ -136,3 +136,8 @@ locatii = [("01", "Alba")]
 # 52	Giurgiu
 # 47	Bucuresti - Sector 7 (desfiintat)
 # 48	Bucuresti - Sector 8 (desfiintat)
+
+
+# var = eval('2 + 2 / 3 - 1 * 5')
+# var = eval('{"a": "b"}')
+# print(var, type(var))
