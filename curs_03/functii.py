@@ -85,29 +85,36 @@
 
 """ args si kwargs """
 
-# def suma(a, b=0, *args):
-    # print(type(args))
-    # initial = a + b
-    # total = 0
-    # for elem in args:
-    #     total += elem
-    # return initial + total
+def suma(a, b=0, *args):
+    """
+
+    :param a: param a folosit
+    :param b:
+    :param args:
+    :return:
+    """
+    print(type(args))
+    initial = a + b
+    total = 0
+    for elem in args:
+        total += elem
+    return initial + total
 #
 # var = suma(1, 2, 3, 4, 5, 6)
 # print(var)
 # print(suma(10))
 
 
-# def suma(a, b=0, *args, **kwargs):
-#     initial = a + b
-#     print(initial)
-#     total = 0
-#     for elem in args:
-#         total += elem
-#     for key, value in kwargs.items():
-#         total += value
-#     # print(kwargs)
-#     return initial + total
+def suma(a, b=0, *args, **kwargs):
+    initial = a + b
+    print(initial)
+    total = 0
+    for elem in args:
+        total += elem
+    for key, value in kwargs.items():
+        total += value
+    # print(kwargs)
+    return initial + total
 #
 # # var = suma(1, 2, 3, 4, 5, 6, c=7, bb=8, x=10)
 # var = suma(2, c=10, bb=20, x=30, d=15)

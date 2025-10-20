@@ -69,31 +69,40 @@
 
 var = 'comprehension'
 # caz cu for
-list_ex = []
-for elem in var:
-    list_ex.append(elem)
-print(list_ex)
-
-# caz cu map
-list_map = list(map(lambda x: x, var))
-print(list_map)
-
-# caz cu comprehension:
-list_comp = [elem for elem in var]
-print(list_comp)
-
-list_comp_2 = [elem for elem in var if elem in ['c', 'h', 'n']]
-
-list_with_int = [elem for elem in range(100) if elem % 2 == 0 if elem % 5 == 0]
-print(list_with_int)
-result_3 = ["par" if elem % 2 == 0 else "impar" for elem in range(20)]
-print(result_3)
+# list_ex = []
+# for elem in var:
+#     list_ex.append(elem)
+# print(list_ex)
+#
+# # caz cu map
+# list_map = list(map(lambda x: x, var))
+# print(list_map)
+#
+# # caz cu comprehension:
+# list_comp = [elem for elem in var]
+# print(list_comp)
+#
+# list_comp_2 = [elem for elem in var if elem in ['c', 'h', 'n']]
+#
+# list_with_int = [elem for elem in range(100) if elem % 2 == 0 if elem % 5 == 0]
+# print(list_with_int)
+# result_3 = ["par" if elem % 2 == 0 else "impar" for elem in range(20)]
+# print(result_3)
 
 
 """DICTIONARY COMPREHENSION"""
 
-squared_numbers = {num: num for num in range(1, 11)}
-print(squared_numbers)
+# squared_numbers = {num: num for num in range(1, 11)}
+# print(squared_numbers)
 
 
 """ANY SI ALL si ISINSTANCE """
+
+# print(isinstance(40, int))
+
+a = [40, 45]
+b = [1, 41]
+c = [41, 45]
+
+# print(any(i in a for i in b))
+# print(all(i in a for i in c))
