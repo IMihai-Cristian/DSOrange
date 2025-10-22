@@ -1,5 +1,6 @@
 # from fisier_ptr_exemple_module import suma
 # print(suma(1, 2, 3, 4, 5, 6, c=7, bb=8, x=10), 'linia 3')
+import os
 import sys
 
 # from fisier_ptr_exemple_module import suma as functie_importata
@@ -28,6 +29,22 @@ from fisier_ptr_exemple_module import model_var
 # print(dir(a))
 
 """ pachete """
+# VAR 1
+# from curs_03.exemplu_pachete import calc
+# print(calc(20))
+# print(sys.path)
+# # /home/mihai/Digital Stack/DSOrange
+# sys.path.append('/home/mihai/Digital Stack/DSOrange')
+# print(sys.path)
+# from curs_03.exemplu_pachete import calc
+# print(calc(20))
 
-# import exempl
-print(sys.path)
+# VAR 2
+
+BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# print(BASE)
+sys.path.append(BASE)
+# from curs_02.conditionari_and_loops import var
+# print(var)
+
+import math, numbers
