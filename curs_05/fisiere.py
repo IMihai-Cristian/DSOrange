@@ -77,8 +77,13 @@ import csv
 
 
 # import datetime
-from datetime import datetime, timedelta
-time_now = datetime.now() + timedelta(days=30)
-print(time_now)
+# from datetime import datetime, timedelta
+# time_now = datetime.now() + timedelta(days=30)
+# print(time_now)
 # print(time_now.strptime('22:01:23 10:50', '%d%m%Y %H%M'))
 # print(time_now.strftime('%d%m%Y %H%M'))
+from math import sqrt
+
+val = sqrt(20)
+print(val)
+# print(sqrt(30))

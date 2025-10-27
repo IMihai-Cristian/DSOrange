@@ -1,0 +1,12 @@
+.exemplu {
+    border: 2px solid blue;
+}
+tr > td:nth-child(1) {
+    color: #c416d7d4;
+}
+#rand_1tbody {
+    color: aqua;
+}
+tr > td:nth-child(2) {
+    font-family: FreeMono;
+}
