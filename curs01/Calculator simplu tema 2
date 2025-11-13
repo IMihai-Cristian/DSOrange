@@ -1,0 +1,146 @@
+# Mini-proiect: Calculator simplu în Python (pas cu pas: num1 → op → num2 → rezultat)
+# Folosește: variabile, strings, liste, tupluri, seturi, dicționare, condiționări (if/else), loops (while/for)
+# Interacțiune: Input separat pentru fiecare pas, ca un calculator real.
+
+# 1. VARIABILE
+istoric = []  # LISTĂ: Stochează operațiile (ex: ["5 + 3 = 8"])
+numar1 = 0.0
+numar2 = 0.0
+operator = ""
+rezultat = 0.0
+
+# 2. TUPLU: Operatorii fixați
+operatori = ("+", "-", "*", "/")
+
+# 3. SET: Caractere valide pentru numere și operatori (simplificat pentru input-uri separate)
+caractere_numar = set("0123456789.")  # Pentru numere (cifre + punct zecimal)
+caractere_operator = set("+-*/")  # Pentru operatori
+
+
+# 4. FUNCȚII ȘI DICȚIONAR
+def aduna(x, y): return x + y
+
+
+def scade(x, y): return x - y
+
+
+def inmulti(x, y): return x * y
+
+
+def imparte(x, y):
+    if y == 0:
+        return "Eroare: Împărțire la zero!"
+    return x / y
+
+
+calculatoare = {
+    "+": aduna,
+    "-": scade,
+    "*": inmulti,
+    "/": imparte
+}
+
+
+# 5. FUNCȚII DE VALIDARE (separate pentru claritate)
+def valideaza_numar(text):
+    """Verifică dacă text e un număr valid (string → float)."""
+    for char in text:
+        if char not in caractere_numar:
+            return False
+    try:
+        float(text)  # Test conversie
+        return True
+    except ValueError:
+        return False
+
+
+def valideaza_operator(text):
+    """Verifică dacă text e un operator valid."""
+    return text in operatori
+
+
+# 6. LOOP PRINCIPAL (while pentru interacțiune continuă)
+print("=== Calculator Simplu (Pas cu Pas) ===")
+print("Voi cere: primul număr → operator (+,-,*,/) → al doilea număr → rezultat.")
+print("'C' pentru clear istoric, 'Q' pentru quit (la întrebarea 'Continui?').")
+
+continua = True  # Variabilă pentru control loop
+while continua:
+    # PAS 1: Input primul număr
+    while True:  # Loop mic pentru validare număr1
+        input_num1 = input("\nIntrodu primul număr (ex: 5 sau 3.5): ").strip()
+        if input_num1.upper() == "Q":
+            continua = False
+            break  # Ieși din loop mic și din principal
+        if valideaza_numar(input_num1):
+            numar1 = float(input_num1)
+            break  # Număr valid, ieși din loop validare
+        else:
+            print("Eroare: Invalid număr! Folosește doar cifre și . (ex: 5.5)")
+
+    if not continua:
+        break  # Dacă Q, ieși complet
+
+    # PAS 2: Input operator
+    while True:  # Loop mic pentru validare operator
+        input_op = input("Introdu operatorul (+, -, *, /): ").strip()
+        if input_op.upper() == "Q":
+            continua = False
+            break  # Ieși
+        if valideaza_operator(input_op):
+            operator = input_op
+            break  # Operator valid
+        else:
+            print("Eroare: Operator invalid! Folosește +, -, *, /")
+
+    if not continua:
+        break
+
+    # PAS 3: Input al doilea număr
+    while True:  # Loop mic pentru validare număr2
+        input_num2 = input("Introdu al doilea număr (ex: 3 sau 2.5): ").strip()
+        if input_num2.upper() == "Q":
+            continua = False
+            break
+        if valideaza_numar(input_num2):
+            numar2 = float(input_num2)
+            break
+        else:
+            print("Eroare: Invalid număr! Folosește doar cifre și . (ex: 5.5)")
+
+    if not continua:
+        break
+
+    # PAS 4: Calculează și arată rezultat
+    rezultat = calculatoare[operator](numar1, numar2)
+
+    # Adaugă la istoric (LISTĂ)
+    operatie = f"{numar1} {operator} {numar2} = {rezultat}"
+    istoric.append(operatie)
+
+    # Afișare rezultat
+    print(f"\nRezultat: {numar1} {operator} {numar2} = {rezultat}")
+    print(f"Istoric (ultimele 5): {istoric[-5:]}")  # Slicing listă
+
+    # Întreabă dacă continuă (pentru 'C' sau 'Q')
+    while True:  # Loop mic pentru alegere
+        alegere = input("\nContinui? (Y pentru da, C pentru clear istoric, Q pentru quit): ").strip().upper()
+        if alegere == "Y":
+            break
+        elif alegere == "C":
+            istoric.clear()
+            print("Istoricul șters! Lista goală.")
+            break  # Continuă
+        elif alegere == "Q":
+            continua = False
+            break
+        else:
+            print("Alege Y, C sau Q!")
+
+
+if istoric:
+    print("\nIstoricul final:", istoric)
+else:
+    print("\nNicio operație salvată.")
+
+input("\nApasă Enter pentru a ieși...")
